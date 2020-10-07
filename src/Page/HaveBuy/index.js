@@ -18,6 +18,11 @@ const columns2 = [
         key: 'hasbuy',
     },
     {
+        title: '金额',
+        dataIndex: 'amount',
+        key: 'amount',
+    },
+    {
         title: '创建时间',
         dataIndex: 'createTime',
         key: 'createTime',
@@ -100,12 +105,9 @@ const columns2 = [
         key: 'action',
         render: (text, record) => (
             <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    查看
-        </Tag>
-                <Tag color={'volcano'} key={'delete'}>
-                    删除
-        </Tag>
+                <Tag color={'red'} key={'edit'}>编辑</Tag>
+                <Tag color={'green'} key={'watch'}>查看</Tag>
+                <Tag color={'volcano'} key={'delete'}>删除</Tag>
             </div>
         ),
     },
@@ -114,57 +116,60 @@ const columns2 = [
 const data2 = [
     {
         key: '1',
-        title: '我的第一个十年',
+        title: '我的...',
         status: '已上线',
         createTime: '2020/10/07 12:00:01',
-        checkTime: '2020/10/07 12:30:01',
+        checkTime: '2020/10/07...',
         checkStaff: '张三',
-        writer: '一只风筝',
+        writer: '一只',
         publishStaff: '赵小小',
-        publishTime: '2020/10/07 13:30:01',
-        watchSum: 1000,
-        likeSum: 120,
-        collectSum: 100,
+        publishTime: '2020/10/07...',
+        watchSum: 10,
+        likeSum: 12,
+        collectSum: 10,
         qrcode: 'http://devoutact.top/OA/src/images/qrcode.jpg',
         tags: ['可爱', '励志'],
         type: '散文',
-        hasbuy: '是'
+        hasbuy: '是',
+        amount: 10
     },
     {
         key: '2',
-        title: '室内花卉种植2',
+        title: '室内花...',
         status: '已上线',
         createTime: '2020/10/07 12:00:01',
-        checkTime: '2020/10/07 12:30:01',
+        checkTime: '2020/10/07...',
         checkStaff: '李四',
-        writer: '往事如烟',
+        writer: '往事',
         publishStaff: '赵小小',
-        publishTime: '2020/10/07 13:30:01',
-        watchSum: 1000,
-        likeSum: 120,
-        collectSum: 100,
+        publishTime: '2020/10/07...',
+        watchSum: 10,
+        likeSum: 12,
+        collectSum: 11,
         qrcode: 'http://devoutact.top/OA/src/images/qrcode.jpg',
         tags: ['可爱', '励志'],
         type: '笔记',
-        hasbuy: '是'
+        hasbuy: '是',
+        amount: 1
     },
     {
         key: '3',
-        title: '如何快速升职加薪？',
+        title: '升职加薪...',
         status: '已上线',
         createTime: '2020/10/07 12:00:01',
-        checkTime: '2020/10/07 12:30:01',
+        checkTime: '2020/10/07...',
         checkStaff: '张三',
-        writer: '最美的...',
+        writer: '最美',
         publishStaff: '赵大大',
-        publishTime: '2020/10/07 13:30:01',
-        watchSum: 1000,
-        likeSum: 120,
-        collectSum: 100,
+        publishTime: '2020/10/07...',
+        watchSum: 10,
+        likeSum: 12,
+        collectSum: 10,
         qrcode: 'http://devoutact.top/OA/src/images/qrcode.jpg',
         tags: ['励志'],
         type: '问答',
-        hasbuy: '是'
+        hasbuy: '是',
+        amount: 10
     },
 ];
 const { Search } = Input;

@@ -18,7 +18,7 @@ const columns = [
     key: 'auth',
   },
   {
-    title: '图片',
+    title: '头像',
     dataIndex: 'icon',
     key: 'icon',
     render: text => <img src={text} className="my-icon" />
