@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Feedback extends Component {
+class Index extends Component {
   state = {
     loading: false,
   }
@@ -10,11 +10,11 @@ class Feedback extends Component {
   render() {
     return (
       <div >
-       用户反馈
+        首页
 
       </div>
     );
   }
 }
 
-export default Feedback;
+export default Index;
