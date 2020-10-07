@@ -7,9 +7,11 @@ import {
   HashRouter as Router,
   Route, Link, Switch
 } from 'react-router-dom';
-import Index from '../Index';
-import MyZone from '../MyZone';
-
+import Index from '../Index';//超级管理员首页总览
+import MyZone from '../MyZone';//待审核 所有成员都有 待审核任务由超级管理员分配给其他管理员
+import Publish from '../Publish';//待发布 发布权限只有超级管理员才有
+import Online from '../Online';//已上线
+import TrashCan from '../TrashCan';//已删除的
 
 
 const { Header } = Layout;
@@ -55,8 +57,11 @@ class Main extends Component {
   }
 
   urlArr = {
-    'Main': ['/Main', '/Main/MyZoneTask', '/Main/MyZoneBug', '/Main/MyZoneDemand', '/Main/MyZoneDemandCard'],
-    'Main/Index': ['/Main/Index']
+    'Main': ['/Main'],
+    'Main/Index': ['/Main/Index'],
+    'Main/Publish': ['/Main/Publish'],
+    'Main/Online': ['/Main/Online'],
+    'Main/TrashCan': ['/Main/TrashCan']
   }
 
   //获取所有权限控制，包括按钮和菜单
@@ -72,9 +77,24 @@ class Main extends Component {
         "Authority": 1
       },
       {
-        "FunctionName": "我的地盘",
+        "FunctionName": "待审核",
         "Url": "Main",
         "Authority": 0,
+      },
+      {
+        "FunctionName": "待发布",
+        "Url": "Main/Publish",
+        "Authority": 1,
+      },
+      {
+        "FunctionName": "已上线",
+        "Url": "Main/Online",
+        "Authority": 0,
+      },
+      {
+        "FunctionName": "已删除",
+        "Url": "Main/TrashCan",
+        "Authority": 1,
       }
     ];
     that.setState({ menuList: data });
@@ -122,6 +142,9 @@ class Main extends Component {
           <Switch>
             <Route exact path="/Main/Index" component={Index} />
             <Route exact path="/Main" component={MyZone} />
+            <Route exact path="/Main/Publish" component={Publish} />
+            <Route exact path="/Main/Online" component={Online} />
+            <Route exact path="/Main/TrashCan" component={TrashCan} />
           </Switch>
         </Router>
       </Layout>

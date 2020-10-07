@@ -13,6 +13,16 @@ const columns = [
         key: 'createTime',
     },
     {
+        title: '审核时间',
+        dataIndex: 'checkTime',
+        key: 'checkTime',
+    },
+    {
+        title: '审核人',
+        dataIndex: 'checkStaff',
+        key: 'checkStaff',
+    },
+    {
         title: '作者',
         dataIndex: 'writer',
         key: 'writer',
@@ -39,7 +49,7 @@ const columns = [
                     编辑
         </Tag>
                 <Tag color={'blue'} key={'check'}>
-                    审核
+                    发布
         </Tag>
                 <Tag color={'volcano'} key={'delete'}>
                     删除
@@ -52,28 +62,34 @@ const columns = [
 const data = [
     {
         key: '1',
-        title: '室内花卉种植',
-        status: '待审核',
-        writer: '一只风筝',
-        createTime: '2020/10/07 12:00:01'
+        title: '室内花卉种植1',
+        status: '待发布',
+        createTime: '2020/10/07 12:00:01',
+        checkTime: '2020/10/07 12:30:01',
+        checkStaff: '张三',
+        writer: '一只风筝'
     },
     {
         key: '1',
-        title: '室内花卉种植',
-        status: '待审核',
-        writer: '往事如烟',
-        createTime: '2020/10/07 12:00:01'
+        title: '室内花卉种植2',
+        status: '待发布',
+        createTime: '2020/10/07 12:00:01',
+        checkTime: '2020/10/07 12:30:01',
+        checkStaff: '李四',
+        writer: '往事如烟'
     },
     {
         key: '1',
-        title: '室内花卉种植',
-        status: '待审核',
-        writer: '最美的不是下雨天',
-        createTime: '2020/10/07 12:00:01'
+        title: '室内花卉种植3',
+        status: '待发布',
+        createTime: '2020/10/07 12:00:01',
+        checkTime: '2020/10/07 12:30:01',
+        checkStaff: '张三',
+        writer: '最美的不是下雨天'
     },
 ];
 
-class MyZone extends Component {
+class Publish extends Component {
     state = {
         loading: false,
     }
@@ -84,15 +100,15 @@ class MyZone extends Component {
         return (
             <div className="Index-wrapper">
                 <div className="chart2">
-                    <div className="title">我的待审核——笔记</div>
+                    <div className="title">我的待发布——笔记</div>
                     <Table columns={columns} dataSource={data} className="team-table" />
                 </div>
                 <div className="chart2">
-                    <div className="title">我的待审核——散文</div>
+                    <div className="title">我的待发布——散文</div>
                     <Table columns={columns} dataSource={data} className="team-table" />
                 </div>
                 <div className="chart2">
-                    <div className="title">我的待审核——问答</div>
+                    <div className="title">我的待发布——问答</div>
                     <Table columns={columns} dataSource={data} className="team-table" />
                 </div>
             </div>
@@ -100,4 +116,4 @@ class MyZone extends Component {
     }
 }
 
-export default MyZone;
+export default Publish;
