@@ -3,6 +3,8 @@ import { Card, Col, Row } from 'antd';
 import './index.scss';
 import png1 from '../../images/1.png';
 import png2 from '../../images/2.png';
+import png3 from '../../images/3.png';
+import png4 from '../../images/4.png';
 class Index extends Component {
   state = {
     loading: false,
@@ -49,8 +51,8 @@ class Index extends Component {
           <Row gutter={24}>
             <Col span={6}>
               <Card title="今日获取用户渠道" bordered={false}>
-                <span>今日头条:12</span>&nbsp;|&nbsp;
-                <span>微信:12</span>
+                <span>今日头条:12人</span>&nbsp;|&nbsp;
+                <span>微信:10人</span>
               </Card>
             </Col>
             <Col span={6}>
@@ -64,6 +66,25 @@ class Index extends Component {
             </Col>
           </Row>
         </div>
+        <div className="site-card-still">
+          <Row gutter={24}>
+            <Col span={6}>
+              <Card title="今日渠道费用" bordered={false}>
+                <span>今日头条:120元</span>&nbsp;|&nbsp;
+                <span>微信:12元</span>
+              </Card>
+            </Col>
+            <Col span={6}>
+              <Card title="待审核笔记" bordered={false}>100</Card>
+            </Col>
+            <Col span={6}>
+              <Card title="待审核散文" bordered={false}>123</Card>
+            </Col>
+            <Col span={6}>
+              <Card title="待审核问答" bordered={false}>345</Card>
+            </Col>
+          </Row>
+        </div>
         <div className="chart1">
           <div className="title">笔记/散文/问答数统计</div>
           <img src={png1} />
@@ -71,6 +92,14 @@ class Index extends Component {
         <div className="chart2">
           <div className="title">今日头条/微信等渠道获取用户数统计</div>
           <img src={png2} />
+        </div>
+        <div className="chart2">
+          <div className="title">今日头条/微信等渠道费用统计</div>
+          <img src={png3} />
+        </div>
+        <div className="chart2">
+          <div className="title">今日头条/微信等渠道费用和获取用户数——转化率</div>
+          <img src={png4} />
         </div>
       </div>
     );
