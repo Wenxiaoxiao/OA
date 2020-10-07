@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Col, Row, Table, Tag } from 'antd';
+import { Card, Col, Row, Table, Tag, Button } from 'antd';
 import './index.scss';
 import png1 from '../../images/1.png';
 import png2 from '../../images/2.png';
@@ -176,6 +176,7 @@ class Index extends Component {
         </div>
         <div className="chart2">
           <div className="title">我的团队</div>
+          <Button type="primary" className="my-btn">新增</Button>
           <Table columns={columns} dataSource={data} className="team-table" />
         </div>
       </div>

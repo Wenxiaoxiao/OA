@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Tag, Input, Tabs, Radio } from 'antd';
+import { Table, Tag, Input, Tabs, Radio, Button } from 'antd';
 
 const columns2 = [
     {
@@ -43,15 +43,9 @@ const columns2 = [
         key: 'action',
         render: (text, record) => (
             <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    启用
-        </Tag>
-                <Tag color={'geekblue'} key={'edit'}>
-                    关闭
-        </Tag>
-                <Tag color={'red'} key={'edit'}>
-                    编辑
-        </Tag>
+                <Tag color={'green'} key={'open'}>启用</Tag>
+                <Tag color={'geekblue'} key={'close'}>关闭</Tag>
+                <Tag color={'red'} key={'edit'}></Tag>
             </div >
         ),
     },
@@ -172,11 +166,13 @@ class Activities extends Component {
             <div className="Index-wrapper">
                 <div className="chart2">
                     <div className="title">活动列表</div>
+                    <Button type="primary" className="my-btn">新增</Button>
                     <Search placeholder="输入活动名称" onSearch={value => console.log(value)} enterButton className="my-search" />
                     <Table columns={columns2} dataSource={data2} className="team-table" />
                 </div>
                 <div className="chart2">
                     <div className="title">每日书签配置(用户签到，随机获得书签背景和文案)</div>
+                    <Button type="primary" className="my-btn">新增</Button>
                     <Search placeholder="输入书签名称或文案关键字" onSearch={value => console.log(value)} enterButton className="my-search" />
                     <Table columns={columns3} dataSource={data3} className="team-table" />
                 </div>

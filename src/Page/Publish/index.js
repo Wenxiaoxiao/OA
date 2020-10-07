@@ -42,18 +42,10 @@ const columns = [
         key: 'action',
         render: (text, record) => (
             <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    查看
-        </Tag>
-                <Tag color={'geekblue'} key={'edit'}>
-                    编辑
-        </Tag>
-                <Tag color={'blue'} key={'check'}>
-                    发布
-        </Tag>
-                <Tag color={'volcano'} key={'delete'}>
-                    删除
-        </Tag>
+                <Tag color={'red'} key={'buy'}>购买</Tag>
+                <Tag color={'green'} key={'watch'}>查看</Tag>
+                <Tag color={'geekblue'} key={'editcheck'}>编辑并发布</Tag>
+                <Tag color={'volcano'} key={'delete'}>删除</Tag>
             </div>
         ),
     },

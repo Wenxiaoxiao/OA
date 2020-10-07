@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Tag, Input, Tabs, Radio } from 'antd';
+import { Table, Tag, Input, Tabs, Radio, Button } from 'antd';
 const columns = [
     {
         title: '专栏名',
@@ -306,10 +306,12 @@ class SetNote extends Component {
             <div className="Index-wrapper">
                 <div className="chart2">
                     <div className="title">顶部专栏配置(根据专栏显示不同的列表数据)</div>
+                    <Button type="primary" className="my-btn">新增</Button>
                     <Table columns={columns} dataSource={data} className="team-table" />
                 </div>
                 <div className="chart2">
                     <div className="title">笔记模板配置</div>
+                    <Button type="primary" className="my-btn">新增</Button>
                     <Table columns={columns1} dataSource={data1} className="team-table" />
                 </div>
                 <div className="chart2">

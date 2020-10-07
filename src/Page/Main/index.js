@@ -74,7 +74,7 @@ class Main extends Component {
     'Main/SetMine': ['/Main/SetMine'],
     'Main/UserList': ['/Main/UserList'],
     'Main/Activities': ['/Main/Activities'],
-    'Maim/HaveBuy': ['/Main/HaveBuy']
+    'Main/HaveBuy': ['/Main/HaveBuy']
   }
 
   //获取所有权限控制，包括按钮和菜单

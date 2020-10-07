@@ -159,6 +159,7 @@ class SetMine extends Component {
                 </div>
                 <div className="chart2">
                     <div className="title">个人中心导航配置</div>
+                    <Button type="primary" className="my-btn">新增</Button>
                     <Table columns={columns1} dataSource={data1} className="team-table" />
                 </div>
             </div>

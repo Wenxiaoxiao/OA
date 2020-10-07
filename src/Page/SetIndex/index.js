@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Tag, Input, Tabs, Radio } from 'antd';
+import { Table, Tag, Input, Tabs, Radio, Button } from 'antd';
 const columns = [
     {
         title: '主题',
@@ -352,14 +352,16 @@ class SetIndex extends Component {
             <div className="Index-wrapper">
                 <div className="chart2">
                     <div className="title">顶部banner配置</div>
+                    <Button type="primary" className="my-btn">新增</Button>
                     <Table columns={columns} dataSource={data} className="team-table" />
                 </div>
                 <div className="chart2">
                     <div className="title">导航配置</div>
+                    <Button type="primary" className="my-btn">新增</Button>
                     <Table columns={columns1} dataSource={data1} className="team-table" />
                 </div>
                 <div className="chart2">
-                    <div className="title">热门精选</div>
+                    <div className="title">热门精选(取前50条数据)</div>
                     <Search placeholder="输入作品名或作者名" onSearch={value => console.log(value)} enterButton className="my-search" />
                     <span className="my-tabs-name">设置页面顺序</span>
                     <Radio.Group value={size} onChange={this.onChange} style={{ marginBottom: 16 }}>
