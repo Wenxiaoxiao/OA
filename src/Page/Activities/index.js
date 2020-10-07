@@ -45,7 +45,7 @@ const columns2 = [
             <div className="action">
                 <Tag color={'green'} key={'open'}>启用</Tag>
                 <Tag color={'geekblue'} key={'close'}>关闭</Tag>
-                <Tag color={'red'} key={'edit'}></Tag>
+                <Tag color={'red'} key={'edit'}>编辑</Tag>
             </div >
         ),
     },

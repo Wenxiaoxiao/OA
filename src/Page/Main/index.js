@@ -174,8 +174,9 @@ class Main extends Component {
   render() {
     return (
       <Layout className="layout">
-        <Header>
+        <Header className="my-header">
           <img src={Touxiang} className="touxiang" />
+          <span className="userName">张三</span>
           <Menu
             theme="dark"
             mode="horizontal"
@@ -187,7 +188,6 @@ class Main extends Component {
           >
             {this.menuList()}
           </Menu>
-          <span className="userName">张三</span>
         </Header>
         <Router>
           <Switch>
