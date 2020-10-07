@@ -1,0 +1,13 @@
+[
+
+    {
+        "FunctionName": "总览",
+        "Url": "Main/Index",
+        "Authority": 1
+    },
+    {
+        "FunctionName": "我的地盘",
+        "Url": "Main",
+        "Authority": 0
+    }
+]
