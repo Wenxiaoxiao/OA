@@ -16,6 +16,7 @@ import SetIndex from '../SetIndex';//首页页面配置
 import SetNote from '../SetNote';//笔记页面配置
 import SetArticle from '../SetArticle';//散文页面配置
 import SetMine from '../SetMine';//我的页面配置
+import UserList from '../UserList';//用户列表
 
 
 const { Header } = Layout;
@@ -69,7 +70,8 @@ class Main extends Component {
     'Main/SetIndex': ['/Main/SetIndex'],
     'Main/SetNote': ['/Main/SetNote'],
     'Main/SetArticle': ['/Main/SetArticle'],
-    'Main/SetMine': ['/Main/SetMine']
+    'Main/SetMine': ['/Main/SetMine'],
+    'Main/UserList': ['/Main/UserList']
   }
 
   //获取所有权限控制，包括按钮和菜单
@@ -122,6 +124,11 @@ class Main extends Component {
       {
         "FunctionName": "我的",
         "Url": "Main/SetMine",
+        "Authority": 1,
+      },
+      {
+        "FunctionName": "用户列表",
+        "Url": "Main/UserList",
         "Authority": 1,
       }
     ];
@@ -177,6 +184,7 @@ class Main extends Component {
             <Route exact path="/Main/SetIndex" component={SetIndex} />
             <Route exact path="/Main/SetMine" component={SetMine} />
             <Route exact path="/Main/SetNote" component={SetNote} />
+            <Route exact path="/Main/UserList" component={UserList} />
           </Switch>
         </Router>
       </Layout>
