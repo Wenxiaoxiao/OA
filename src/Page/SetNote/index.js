@@ -309,8 +309,8 @@ class SetNote extends Component {
                     <Search placeholder="输入作品名或作者名" onSearch={value => console.log(value)} enterButton className="my-search" />
                     <span className="my-tabs-name">设置页面顺序</span>
                     <Radio.Group value={size} onChange={this.onChange} style={{ marginBottom: 16 }}>
-                        <Radio.Button value="small1">综合</Radio.Button>
-                        <Radio.Button value="small">浏览量</Radio.Button>
+                        <Radio.Button value="small">综合</Radio.Button>
+                        <Radio.Button value="small1">浏览量</Radio.Button>
                         <Radio.Button value="default">点赞量</Radio.Button>
                         <Radio.Button value="large">收藏量</Radio.Button>
                     </Radio.Group>

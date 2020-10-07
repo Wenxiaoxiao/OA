@@ -1,183 +1,5 @@
 import React, { Component } from 'react';
 import { Table, Tag, Input, Tabs, Radio } from 'antd';
-const columns = [
-    {
-        title: '主题',
-        dataIndex: 'title',
-        key: 'title',
-        render: text => <a>{text}</a>,
-    },
-    {
-        title: '创建时间',
-        dataIndex: 'createTime',
-        key: 'createTime',
-    },
-    {
-        title: '背景图',
-        dataIndex: 'BgUrl',
-        key: 'BgUrl',
-        render: (text, record) => (
-            <img src={text} className="imgSmall" />
-        )
-    },
-    {
-        title: '链接',
-        dataIndex: 'BgLink',
-        key: 'BgLink',
-    },
-    {
-        title: '状态',
-        key: 'status',
-        dataIndex: 'status',
-        render: tags => (
-            <Tag color={'volcano'} key={'status'}>
-                {tags}
-            </Tag>
-        ),
-    },
-    {
-        title: '操作',
-        key: 'action',
-        render: (text, record) => (
-            <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    启用
-        </Tag>
-                <Tag color={'geekblue'} key={'edit'}>
-                    关闭
-        </Tag>
-                <Tag color={'red'} key={'edit'}>
-                    编辑
-        </Tag>
-            </div>
-        ),
-    },
-];
-
-const data = [
-    {
-        key: '1',
-        title: '国庆节活动主题',
-        status: '启用',
-        createTime: '2020/10/07 12:00:01',
-        BgUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        BgLink: 'www.baidu.com'
-    },
-    {
-        key: '2',
-        title: '国庆节活动主题',
-        status: '启用',
-        createTime: '2020/10/07 12:00:01',
-        BgUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        BgLink: 'www.baidu.com'
-    },
-    {
-        key: '3',
-        title: '国庆节活动主题',
-        status: '关闭',
-        createTime: '2020/10/07 12:00:01',
-        BgUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        BgLink: 'www.baidu.com'
-    },
-];
-
-const columns1 = [
-    {
-        title: '标题',
-        dataIndex: 'title',
-        key: 'title',
-        render: text => <a>{text}</a>,
-    },
-    {
-        title: '图标',
-        dataIndex: 'IconUrl',
-        key: 'IconUrl',
-        render: (text, record) => (
-            <img src={text} className="imgSmall" />
-        )
-    },
-    {
-        title: 'App链接',
-        dataIndex: 'AppLink',
-        key: 'AppLink',
-    },
-    {
-        title: 'H5链接',
-        dataIndex: 'H5Link',
-        key: 'H5Link',
-    },
-    {
-        title: 'PC链接',
-        dataIndex: 'PCLink',
-        key: 'PCLink',
-    },
-    {
-        title: '状态',
-        key: 'status',
-        dataIndex: 'status',
-        render: tags => (
-            <Tag color={'volcano'} key={'status'}>
-                {tags}
-            </Tag>
-        ),
-    },
-    {
-        title: '操作',
-        key: 'action',
-        render: (text, record) => (
-            <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    启用
-        </Tag>
-                <Tag color={'geekblue'} key={'edit'}>
-                    关闭
-        </Tag>
-                <Tag color={'red'} key={'edit'}>
-                    编辑
-        </Tag>
-            </div>
-        ),
-    },
-];
-
-const data1 = [
-    {
-        key: '1',
-        title: '活动',
-        status: '启用',
-        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        AppLink: 'www.baidu.com',
-        H5Link: 'www.baidu.com',
-        PCLink: 'www.baidu.com'
-    },
-    {
-        key: '2',
-        title: '签到',
-        status: '启用',
-        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        AppLink: 'www.baidu.com',
-        H5Link: 'www.baidu.com',
-        PCLink: 'www.baidu.com'
-    },
-    {
-        key: '3',
-        title: '今日书签',
-        status: '关闭',
-        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        AppLink: 'www.baidu.com',
-        H5Link: 'www.baidu.com',
-        PCLink: 'www.baidu.com'
-    },
-    {
-        key: '4',
-        title: '待办',
-        status: '关闭',
-        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
-        AppLink: 'www.baidu.com',
-        H5Link: 'www.baidu.com',
-        PCLink: 'www.baidu.com'
-    }
-];
 const columns2 = [
     {
         title: '标题',
@@ -330,7 +152,7 @@ const data2 = [
 ];
 const { Search } = Input;
 const { TabPane } = Tabs;
-class SetIndex extends Component {
+class HaveBuy extends Component {
     state = { size: 'small' };
 
     onChange = e => {
@@ -343,15 +165,7 @@ class SetIndex extends Component {
         return (
             <div className="Index-wrapper">
                 <div className="chart2">
-                    <div className="title">顶部banner配置</div>
-                    <Table columns={columns} dataSource={data} className="team-table" />
-                </div>
-                <div className="chart2">
-                    <div className="title">导航配置</div>
-                    <Table columns={columns1} dataSource={data1} className="team-table" />
-                </div>
-                <div className="chart2">
-                    <div className="title">热门精选</div>
+                    <div className="title">已购列表</div>
                     <Search placeholder="输入作品名或作者名" onSearch={value => console.log(value)} enterButton className="my-search" />
                     <span className="my-tabs-name">设置页面顺序</span>
                     <Radio.Group value={size} onChange={this.onChange} style={{ marginBottom: 16 }}>
@@ -367,4 +181,4 @@ class SetIndex extends Component {
     }
 }
 
-export default SetIndex;
+export default HaveBuy;

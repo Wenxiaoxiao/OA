@@ -17,7 +17,8 @@ import SetNote from '../SetNote';//笔记页面配置
 import SetArticle from '../SetArticle';//散文页面配置
 import SetMine from '../SetMine';//我的页面配置
 import UserList from '../UserList';//用户列表
-
+import Activities from '../Activities';//活动配置
+import HaveBuy from '../HaveBuy';//已购买内容，内容顶部或底部加上对应的公众号二维码
 
 const { Header } = Layout;
 const SubMenu = Menu.SubMenu;
@@ -71,7 +72,9 @@ class Main extends Component {
     'Main/SetNote': ['/Main/SetNote'],
     'Main/SetArticle': ['/Main/SetArticle'],
     'Main/SetMine': ['/Main/SetMine'],
-    'Main/UserList': ['/Main/UserList']
+    'Main/UserList': ['/Main/UserList'],
+    'Main/Activities': ['/Main/Activities'],
+    'Maim/HaveBuy': ['/Main/HaveBuy']
   }
 
   //获取所有权限控制，包括按钮和菜单
@@ -130,6 +133,16 @@ class Main extends Component {
         "FunctionName": "用户列表",
         "Url": "Main/UserList",
         "Authority": 1,
+      },
+      {
+        "FunctionName": "活动配置",
+        "Url": "Main/Activities",
+        "Authority": 1,
+      },
+      {
+        "FunctionName": "已购内容",
+        "Url": "Main/HaveBuy",
+        "Authority": 1,
       }
     ];
     that.setState({ menuList: data });
@@ -185,6 +198,8 @@ class Main extends Component {
             <Route exact path="/Main/SetMine" component={SetMine} />
             <Route exact path="/Main/SetNote" component={SetNote} />
             <Route exact path="/Main/UserList" component={UserList} />
+            <Route exact path="/Main/Activities" component={Activities} />
+            <Route exact path="/Main/HaveBuy" component={HaveBuy} />
           </Switch>
         </Router>
       </Layout>
