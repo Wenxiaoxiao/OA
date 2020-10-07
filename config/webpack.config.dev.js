@@ -1,4 +1,4 @@
-'use strict';
+
 
 const path = require('path');
 const webpack = require('webpack');
@@ -31,13 +31,19 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
 // common function to get style loaders
-const getStyleLoaders = (cssOptions, preProcessor) => {
+const getStyleLoaders = (cssOptions, lessOptions, preProcessor) => {
   const loaders = [
     require.resolve('style-loader'),
     {
       loader: require.resolve('css-loader'),
       options: cssOptions,
+    },
+    {
+      loader: require.resolve('less-loader'),
+      options: lessOptions
     },
     {
       // Options for PostCSS as we reference these options twice
@@ -180,7 +186,7 @@ module.exports = {
             options: {
               formatter: require.resolve('react-dev-utils/eslintFormatter'),
               eslintPath: require.resolve('eslint'),
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -213,7 +219,7 @@ module.exports = {
               customize: require.resolve(
                 'babel-preset-react-app/webpack-overrides'
               ),
-              
+
               plugins: [
                 ['import', { libraryName: 'antd', style: 'css' }],
                 [
@@ -254,7 +260,7 @@ module.exports = {
               cacheDirectory: true,
               // Don't waste time on Gzipping the cache
               cacheCompression: false,
-              
+
               // If an error happens in a package, it's possible to be
               // because it was compiled. Thus, we don't want the browser
               // debugger to show the original code. Instead, the code
@@ -308,6 +314,22 @@ module.exports = {
               'sass-loader'
             ),
           },
+          {
+            test: lessRegex,
+            exclude: cssModuleRegex,
+            use: getStyleLoaders({
+              importLoaders: 1
+            }, 'less-loader'),
+            sideEffects: true,
+          },
+          {
+            test: lessModuleRegex,
+            use: getStyleLoaders({
+              importLoaders: 1,
+              modules: true,
+              getLocalIdent: getCSSModuleLocalIdent,
+            }, 'less-loader'),
+          }, // less end;
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.

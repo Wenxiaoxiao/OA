@@ -74,7 +74,7 @@ class Main extends Component {
       {
         "FunctionName": "我的地盘",
         "Url": "Main",
-        "Authority": 0
+        "Authority": 0,
       }
     ];
     that.setState({ menuList: data });
