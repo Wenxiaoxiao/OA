@@ -12,6 +12,10 @@ import MyZone from '../MyZone';//待审核 所有成员都有 待审核任务由
 import Publish from '../Publish';//待发布 发布权限只有超级管理员才有
 import Online from '../Online';//已上线
 import TrashCan from '../TrashCan';//已删除的
+import SetIndex from '../SetIndex';//首页页面配置
+import SetNote from '../SetNote';//笔记页面配置
+import SetArticle from '../SetArticle';//散文页面配置
+import SetMine from '../SetMine';//我的页面配置
 
 
 const { Header } = Layout;
@@ -61,7 +65,11 @@ class Main extends Component {
     'Main/Index': ['/Main/Index'],
     'Main/Publish': ['/Main/Publish'],
     'Main/Online': ['/Main/Online'],
-    'Main/TrashCan': ['/Main/TrashCan']
+    'Main/TrashCan': ['/Main/TrashCan'],
+    'Main/SetIndex': ['/Main/SetIndex'],
+    'Main/SetNote': ['/Main/SetNote'],
+    'Main/SetArticle': ['/Main/SetArticle'],
+    'Main/SetMine': ['/Main/SetMine']
   }
 
   //获取所有权限控制，包括按钮和菜单
@@ -94,6 +102,26 @@ class Main extends Component {
       {
         "FunctionName": "已删除",
         "Url": "Main/TrashCan",
+        "Authority": 1,
+      },
+      {
+        "FunctionName": "首页",
+        "Url": "Main/SetIndex",
+        "Authority": 1,
+      },
+      {
+        "FunctionName": "笔记",
+        "Url": "Main/SetNote",
+        "Authority": 1,
+      },
+      {
+        "FunctionName": "散文",
+        "Url": "Main/SetArticle",
+        "Authority": 1,
+      },
+      {
+        "FunctionName": "我的",
+        "Url": "Main/SetMine",
         "Authority": 1,
       }
     ];
@@ -145,6 +173,10 @@ class Main extends Component {
             <Route exact path="/Main/Publish" component={Publish} />
             <Route exact path="/Main/Online" component={Online} />
             <Route exact path="/Main/TrashCan" component={TrashCan} />
+            <Route exact path="/Main/SetArticle" component={SetArticle} />
+            <Route exact path="/Main/SetIndex" component={SetIndex} />
+            <Route exact path="/Main/SetMine" component={SetMine} />
+            <Route exact path="/Main/SetNote" component={SetNote} />
           </Switch>
         </Router>
       </Layout>
