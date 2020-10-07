@@ -1,148 +1,114 @@
 {
-  "name": "ant-design-pro",
-  "version": "4.2.1",
+  "name": "pmp",
+  "version": "0.1.0",
   "private": true,
-  "description": "An out-of-box UI solution for enterprise applications",
-  "scripts": {
-    "analyze": "cross-env ANALYZE=1 umi build",
-    "build": "umi build",
-    "deploy": "npm run site && npm run gh-pages",
-    "dev": "npm run start:dev",
-    "docker-hub:build": "docker build  -f Dockerfile.hub -t  ant-design-pro ./",
-    "docker-prod:build": "docker-compose -f ./docker/docker-compose.yml build",
-    "docker-prod:dev": "docker-compose -f ./docker/docker-compose.yml up",
-    "docker:build": "docker-compose -f ./docker/docker-compose.dev.yml build",
-    "docker:dev": "docker-compose -f ./docker/docker-compose.dev.yml up",
-    "docker:push": "npm run docker-hub:build && npm run docker:tag && docker push antdesign/ant-design-pro",
-    "docker:tag": "docker tag ant-design-pro antdesign/ant-design-pro",
-    "fetch:blocks": "pro fetch-blocks && npm run prettier",
-    "gh-pages": "gh-pages -d dist",
-    "i18n-remove": "pro i18n-remove --locale=zh-CN --write",
-    "postinstall": "umi g tmp",
-    "lint": "umi g tmp && npm run lint:js && npm run lint:style && npm run lint:prettier",
-    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
-    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
-    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
-    "lint:prettier": "prettier --check \"src/**/*\" --end-of-line auto",
-    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
-    "precommit": "lint-staged",
-    "prettier": "prettier -c --write \"src/**/*\"",
-    "site": "npm run fetch:blocks && npm run build",
-    "start": "umi dev",
-    "start:dev": "cross-env REACT_APP_ENV=dev MOCK=none umi dev",
-    "start:no-mock": "cross-env MOCK=none umi dev",
-    "start:no-ui": "cross-env UMI_UI=none umi dev",
-    "start:pre": "cross-env REACT_APP_ENV=pre umi dev",
-    "start:test": "cross-env REACT_APP_ENV=test MOCK=none umi dev",
-    "pretest": "node ./tests/beforeTest",
-    "test": "umi test",
-    "test:all": "node ./tests/run-tests.js",
-    "test:component": "umi test ./src/components",
-    "tsc": "tsc --noEmit"
+  "homepage": ".",
+  "dependencies": {
+    "@babel/core": "7.1.0",
+    "@svgr/webpack": "2.4.1",
+    "antd": "^3.10.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "9.0.0",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.4",
+    "babel-plugin-import": "^1.9.1",
+    "babel-plugin-named-asset-import": "^0.2.2",
+    "babel-preset-react-app": "^5.0.3",
+    "bfj": "6.1.1",
+    "case-sensitive-paths-webpack-plugin": "2.1.2",
+    "chalk": "2.4.1",
+    "css-loader": "1.0.0",
+    "dotenv": "6.0.0",
+    "dotenv-expand": "4.2.0",
+    "eslint": "5.6.0",
+    "eslint-config-react-app": "^3.0.3",
+    "eslint-loader": "2.1.1",
+    "eslint-plugin-flowtype": "2.50.1",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-react": "7.11.1",
+    "file-loader": "2.0.0",
+    "fs-extra": "7.0.0",
+    "html-webpack-plugin": "4.0.0-alpha.2",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "23.6.0",
+    "jest-pnp-resolver": "1.0.1",
+    "jest-resolve": "23.6.0",
+    "mini-css-extract-plugin": "0.4.3",
+    "optimize-css-assets-webpack-plugin": "5.0.1",
+    "pnp-webpack-plugin": "1.1.0",
+    "postcss-flexbugs-fixes": "4.1.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "6.0.6",
+    "postcss-safe-parser": "4.0.1",
+    "react": "^16.5.2",
+    "react-app-polyfill": "^0.1.3",
+    "react-dev-utils": "^6.0.4",
+    "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1",
+    "resolve": "1.8.1",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.0",
+    "terser-webpack-plugin": "1.1.0",
+    "url-loader": "1.1.1",
+    "webpack": "4.19.1",
+    "webpack-dev-server": "3.1.9",
+    "webpack-manifest-plugin": "2.0.4",
+    "workbox-webpack-plugin": "3.6.2"
   },
-  "lint-staged": {
-    "**/*.less": "stylelint --syntax less",
-    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
-    "**/*.{js,jsx,tsx,ts,less,md,json}": [
-      "prettier --write"
-    ]
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 10"
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
   ],
-  "dependencies": {
-    "@ant-design/icons": "^4.0.0",
-    "@ant-design/pro-descriptions": "^1.0.16",
-    "@ant-design/pro-layout": "^6.4.16",
-    "@ant-design/pro-table": "^2.7.2",
-    "@umijs/route-utils": "^1.0.32",
-    "antd": "^4.6.3",
-    "classnames": "^2.2.6",
-    "lodash": "^4.17.11",
-    "moment": "^2.25.3",
-    "omit.js": "^2.0.2",
-    "qs": "^6.9.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-helmet-async": "^1.0.4",
-    "umi": "^3.2.14",
-    "umi-request": "^1.0.8",
-    "use-merge-value": "^1.0.1"
-  },
-  "devDependencies": {
-    "@ant-design/pro-cli": "^1.0.18",
-    "@types/classnames": "^2.2.7",
-    "@types/express": "^4.17.0",
-    "@types/history": "^4.7.2",
-    "@types/jest": "^26.0.0",
-    "@types/lodash": "^4.14.144",
-    "@types/qs": "^6.5.3",
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.8.4",
-    "@types/react-helmet": "^6.1.0",
-    "@umijs/fabric": "^2.2.0",
-    "@umijs/plugin-blocks": "^2.0.5",
-    "@umijs/preset-ant-design-pro": "^1.2.0",
-    "@umijs/preset-react": "^1.4.8",
-    "@umijs/preset-ui": "^2.0.9",
-    "@umijs/yorkie": "^2.0.3",
-    "carlo": "^0.9.46",
-    "chalk": "^4.0.0",
-    "cross-env": "^7.0.0",
-    "cross-port-killer": "^1.1.1",
-    "detect-installer": "^1.0.1",
-    "enzyme": "^3.11.0",
-    "eslint": "^7.1.0",
-    "express": "^4.17.1",
-    "gh-pages": "^3.0.0",
-    "jsdom-global": "^3.0.2",
-    "lint-staged": "^10.0.0",
-    "mockjs": "^1.0.1-beta3",
-    "prettier": "^2.0.1",
-    "pro-download": "1.0.1",
-    "puppeteer-core": "^5.0.0",
-    "stylelint": "^13.0.0",
-    "typescript": "^4.0.3"
-  },
-  "engines": {
-    "node": ">=10.0.0"
-  },
-  "checkFiles": [
-    "src/**/*.js*",
-    "src/**/*.ts*",
-    "src/**/*.less",
-    "config/**/*.js*",
-    "scripts/**/*.js"
-  ],
-  "create-umi": {
-    "ignoreScript": [
-      "docker*",
-      "functions*",
-      "site",
-      "generateMock"
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
     ],
-    "ignoreDependencies": [
-      "netlify*",
-      "serverless"
+    "resolver": "jest-pnp-resolver",
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
     ],
-    "ignore": [
-      ".dockerignore",
-      ".git",
-      ".github",
-      ".gitpod.yml",
-      "CODE_OF_CONDUCT.md",
-      "Dockerfile",
-      "Dockerfile.*",
-      "lambda",
-      "LICENSE",
-      "netlify.toml",
-      "README.*.md",
-      "azure-pipelines.yml",
-      "docker",
-      "CNAME",
-      "create-umi"
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://127.0.0.1:8080",
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "react-app"
     ]
   }
 }

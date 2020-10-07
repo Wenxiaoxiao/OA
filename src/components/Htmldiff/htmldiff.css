@@ -1,0 +1,36 @@
+.htmldiff-content {
+    padding: 5px;
+    background: #fff;
+}
+ins {
+    background-color: #cfc;
+    text-decoration: none;
+}
+
+del, del p {
+    color: #999;
+    background-color: #FEC8C8;
+}
+del img {
+    display: none;
+}
+
+.text {
+    float: left;
+    width: 30%;
+    border: 1px solid blue;
+    margin: 10px;
+}
+img {
+    width: 100%
+}
+.htmldiff-table {
+    
+    width:100%;
+    border: 1px solid #ccc;
+    
+}
+.htmldiff-table td{
+    padding: 5px;
+    border: 1px solid #ccc;
+}

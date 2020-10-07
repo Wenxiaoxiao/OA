@@ -1,0 +1,31 @@
+
+body{
+background-color: #f5f6f8
+
+
+}
+
+.main {
+  padding: 0 50px;
+  background-color:hsla(0, 0%, 100%, 0.7);
+  width:400px;
+  height:300px;
+  position:absolute;
+  left:50%;
+  margin-left: -200px;
+  top:50%;
+  margin-top:-150px;
+  border-radius: 6px;
+  border:1px solid #dfdfdf
+}
+
+h3{
+ text-align: center;
+ margin-top: 10px !important;
+ color: #cccccc !important;
+}
+
+.item{
+   padding: 10px;
+
+}

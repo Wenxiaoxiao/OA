@@ -1,0 +1,361 @@
+/* 日历样式 */
+.CalendarDetail .Calendar {
+    width: 100%;
+    /* min-height:500px; */
+    /* height:100%; */
+  }
+  
+  .CalendarDetail .Calendar>div {
+    /* width:50%; */
+    float: left;
+    padding: 10px;
+    /* width: 500px; */
+  }
+  
+  .CalendarDetail .Calendar .Calendar_Left {
+    border-right: 1px dashed #ddd;
+    width: 748px;
+  }
+  
+  .Calendar_body {
+    width: 730px;
+    height: 531px;
+    border: 1px solid #c3d9ff;
+    font-size: 12px;
+    margin: 8px auto;
+  }
+  
+  #top {
+    height: 52px;
+    line-height: 52px;
+    background: #e7eef8;
+    color: #003784;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+  
+  #top select {
+    width: 80px;
+    margin: 0 5px;
+  }
+  
+  #topselect1,
+  #topselect2 {
+    width: 100px;
+    margin: 0 5px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  #top input {
+    padding: 0;
+  }
+  
+  #topinput1 {
+    width: 100px;
+    float: right;
+    background: rgb(0, 109, 183);
+    color: #fff;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    margin-top: 6px;
+    margin-right: 10px;
+  }
+  
+  #wk {
+    margin: 0;
+    padding: 0;
+    height: 41px;
+  }
+  
+  #wk li {
+    float: left;
+    width: 100px;
+    text-align: center;
+    line-height: 41px;
+    list-style: none;
+    font-size: 18px;
+  }
+  
+  #wk li b {
+    font-weight: normal;
+    color: #c60b02;
+  }
+  
+  #cm {
+    clear: left;
+    border-top: 1px dashed #ddd;
+    /* border-bottom: 1px dotted #ddd; */
+    position: relative;
+    overflow: hidden;
+    height: 436px;
+  }
+  
+  #cm .cell0 {
+    display: inline-block;
+    width: 100px;
+    height: 68px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  #cm .cell,#cm .jqs,#cm .txs {
+    /* position: absolute; */
+    display: inline-block;
+    width: 100px;
+    height: 68px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    /* border-bottom:1px dashed #ddd; */
+    /* margin: 0 0 0 9px; */
+  }
+  
+  #cm .cell>div,#cm .addDay>div,#cm .addDay1>div,#cm .addDay2>div,#cm .jqs>div,#cm .txs>div{
+    display: inline-block;
+    width: 100%;
+    height: 34px;
+    line-height: 34px !important;
+  }
+  #cm .addDay{
+    vertical-align: middle;
+    display:inline-block;
+      width: 100px;
+      height: 68px;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(51, 204, 255, 0.1);
+  }
+  
+  #cm .addDay .so {
+    font: bold 16px arial;
+    display: inline-block;
+    /* color:#fff; */
+    font-size: 24px;
+  }
+  
+  #cm .addDay1{
+    vertical-align: middle;
+    display:inline-block;
+      width: 100px;
+      height: 68px;
+    text-align: center;
+    cursor: pointer;
+    /* background:#aaa; */
+    background: url(./heart.png) no-repeat;
+    background-position: 50% -9px;
+  }
+  #cm .addDay2{
+    vertical-align: middle;
+    display:inline-block;
+      width: 100px;
+      height: 68px;
+    text-align: center;
+    cursor: pointer;
+    /* background:#aaa; */
+    background: url(./heart.png) rgba(255, 68, 51, 0.1) no-repeat;
+    background-position: 50% -9px;
+  }
+  
+  #cm .addDay1 .so {
+    font: bold 16px arial;
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+  }
+  #cm .addDay2 .so{
+    font: bold 16px arial;
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+  }
+  #cm .cell .so ,#cm .jqs .so,#cm .txs .so{
+    font: bold 16px arial;
+    display: inline-block;
+    color: #006db7;
+    font-size: 24px;
+  }
+  
+  #cm>.cell:nth-child(7n)>.so {
+    color: red;
+  }
+  
+  #cm>.cell:nth-child(7n-1)>.so {
+    color: red;
+  }
+  
+  #bm {
+    text-align: right;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 13px 0 0;
+  }
+  
+  #bm a {
+    color: #7977ce;
+  }
+  
+  #fd {
+    display: none;
+    position: absolute;
+    border: 1px solid #dddddf;
+    background: #feffcd;
+    padding: 10px;
+    line-height: 21px;
+    width: 150px;
+    z-index: 2;
+  }
+  
+  .Calendar .todayFd {
+    /* position: absolute; */
+    /* border: 1px solid #dddddf;
+      background: #feffcd; */
+    /* padding: 10px; */
+    line-height: 21px;
+    z-index: 0;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+    /* background:#ffbb00; */
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    border: 1px solid #006db7;
+  }
+  
+  .Calendar .todayFt {
+    /* position:absolute; */
+    border-bottom: 1px solid #abd6b8;
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .Calendar .todayFd>div,
+  .Calendar .todayFt>div {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .Calendar .todayFt>div {
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .Calendar .todayFd .div1>span {
+    margin: 0 5px;
+  }
+  
+  .Calendar .todayFd .div1 {
+    /* background:#42962e; */
+    background: #006db7;
+    color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 40px;
+    font-weight: bold;
+    line-height: 40px;
+  }
+  
+  .Calendar .todayFd .div2 {
+    height: 160px;
+    font-size: 114px;
+    line-height: 160px;
+  }
+  
+  /* #fd b ,.Calendar .todayFd>.div2,.Calendar .todayFd>.div4{
+      font-weight: normal;
+      color: #c60a00;
+  } */
+  
+  /* 日历设置样式 */
+  .WinterTime,
+  .SummerTime {
+    color: #000;
+    font-size: 16px;
+    height: 70px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+  
+  .SummerTime>div,
+  .SummerTime>dl,
+  .WinterTime>div,
+  .WinterTime>dl {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .Calendar_Right .SummerAndWinter {
+    width: 596px;
+  }
+  
+  .SummerAndWinter .first {
+    height: 70px;
+    /* background:#33ccff; */
+    line-height: 70px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    /* color:#fff; */
+    margin-right: 10px;
+  }
+  
+  .SummerAndWinter .second {
+    height: 70px;
+    background: #33ccff;
+    line-height: 70px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  .SummerAndWinter .fourth {
+    height: 70px;
+    background: #00cccc;
+    line-height: 70px;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .Calendar_Btn {
+    width: 596px;
+    margin: 20px auto;
+  }
+  
+  .Calendar_Btn>div {
+    width: 287px;
+    height: 42px;
+    display: inline-block;
+    border-radius: 5px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .addHoliday {
+    background: #33ccff;
+    margin-right: 20px;
+  }
+  
+  .cleanSetting {
+    background: #00cccc;
+  }
+  
+  .saveSetting {
+    background: #006db7;
+    margin: 0 auto;
+    margin-top: 20px;
+    display:block !important;
+  }
