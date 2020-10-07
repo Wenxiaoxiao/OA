@@ -2,4 +2,46 @@
     width: 100%;
     min-height: 100vh;
     padding: 30px;
+
+    .site-card-wrapper {
+        width: 100%;
+    }
+
+    .site-card-rate {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .site-card-still {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .chart1 {
+        width: 100%;
+        margin-top: 10px;
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .chart2 {
+        width: 100%;
+        margin-top: 10px;
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
 }
