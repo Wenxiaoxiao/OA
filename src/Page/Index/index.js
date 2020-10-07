@@ -18,6 +18,12 @@ const columns = [
     key: 'auth',
   },
   {
+    title: '图片',
+    dataIndex: 'icon',
+    key: 'icon',
+    render: text => <img src={text} className="my-icon" />
+  },
+  {
     title: '地址',
     dataIndex: 'address',
     key: 'address',
@@ -61,6 +67,7 @@ const data = [
     name: '张三',
     auth: 1,
     address: '湖北省武汉市',
+    icon: 'http://devoutact.top/OA/src/images/1.jpg',
     tags: ['细心', '文笔好'],
   },
   {
@@ -68,6 +75,7 @@ const data = [
     name: '李四',
     auth: 0,
     address: '湖南省长沙市',
+    icon: 'http://devoutact.top/OA/src/images/1.jpg',
     tags: ['效率高', ' 积极主动'],
   },
   {
@@ -75,6 +83,7 @@ const data = [
     name: '王二麻',
     auth: 0,
     address: '北京市',
+    icon: 'http://devoutact.top/OA/src/images/1.jpg',
     tags: ['态度好', '认真负责'],
   },
 ];

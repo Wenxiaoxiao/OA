@@ -20,6 +20,8 @@ import UserList from '../UserList';//用户列表
 import Activities from '../Activities';//活动配置
 import HaveBuy from '../HaveBuy';//已购买内容，内容顶部或底部加上对应的公众号二维码
 
+import Touxiang from '../../images/1.jpg';
+
 const { Header } = Layout;
 const SubMenu = Menu.SubMenu;
 
@@ -173,7 +175,7 @@ class Main extends Component {
     return (
       <Layout className="layout">
         <Header>
-          <div className="logo" />
+          <img src={Touxiang} className="touxiang" />
           <Menu
             theme="dark"
             mode="horizontal"
@@ -185,6 +187,7 @@ class Main extends Component {
           >
             {this.menuList()}
           </Menu>
+          <span className="userName">张三</span>
         </Header>
         <Router>
           <Switch>

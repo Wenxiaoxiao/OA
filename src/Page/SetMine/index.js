@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Tag, Input, Tabs, Radio, Button } from 'antd';
+import { Table, Tag, Input, Tabs, Radio, Button, Switch } from 'antd';
 const columns1 = [
     {
         title: '标题',
@@ -143,6 +143,9 @@ class SetMine extends Component {
         const { size, defaultRule, defaultRule1 } = this.state;
         return (
             <div className="Index-wrapper">
+                <div className="chart2">
+                    私信功能 <Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />
+                </div>
                 <div className="chart2">
                     <div className="title">贡献值规则配置</div>
                     <TextArea rows={4} value={defaultRule} className="my-textarea" /><Button type="primary">保存</Button>
