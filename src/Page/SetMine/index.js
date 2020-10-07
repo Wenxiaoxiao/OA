@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Table, Tag } from 'antd';
-const columns = [
+import { Table, Tag, Input, Tabs, Radio, Button } from 'antd';
+const columns1 = [
     {
         title: '标题',
         dataIndex: 'title',
@@ -8,24 +8,27 @@ const columns = [
         render: text => <a>{text}</a>,
     },
     {
-        title: '创建时间',
-        dataIndex: 'createTime',
-        key: 'createTime',
+        title: '图标',
+        dataIndex: 'IconUrl',
+        key: 'IconUrl',
+        render: (text, record) => (
+            <img src={text} className="imgSmall" />
+        )
     },
     {
-        title: '审核时间',
-        dataIndex: 'checkTime',
-        key: 'checkTime',
+        title: 'App链接',
+        dataIndex: 'AppLink',
+        key: 'AppLink',
     },
     {
-        title: '审核人',
-        dataIndex: 'checkStaff',
-        key: 'checkStaff',
+        title: 'H5链接',
+        dataIndex: 'H5Link',
+        key: 'H5Link',
     },
     {
-        title: '作者',
-        dataIndex: 'writer',
-        key: 'writer',
+        title: 'PC链接',
+        dataIndex: 'PCLink',
+        key: 'PCLink',
     },
     {
         title: '状态',
@@ -43,73 +46,120 @@ const columns = [
         render: (text, record) => (
             <div className="action">
                 <Tag color={'green'} key={'watch'}>
-                    查看
+                    启用
         </Tag>
                 <Tag color={'geekblue'} key={'edit'}>
+                    关闭
+        </Tag>
+                <Tag color={'red'} key={'edit'}>
                     编辑
-        </Tag>
-                <Tag color={'blue'} key={'check'}>
-                    发布
-        </Tag>
-                <Tag color={'volcano'} key={'delete'}>
-                    删除
         </Tag>
             </div>
         ),
     },
 ];
 
-const data = [
+const data1 = [
     {
         key: '1',
-        title: '室内花卉种植1',
-        status: '待发布',
-        createTime: '2020/10/07 12:00:01',
-        checkTime: '2020/10/07 12:30:01',
-        checkStaff: '张三',
-        writer: '一只风筝'
+        title: '我的收藏',
+        status: '启用',
+        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        AppLink: 'www.baidu.com',
+        H5Link: 'www.baidu.com',
+        PCLink: 'www.baidu.com'
     },
     {
-        key: '1',
-        title: '室内花卉种植2',
-        status: '待发布',
-        createTime: '2020/10/07 12:00:01',
-        checkTime: '2020/10/07 12:30:01',
-        checkStaff: '李四',
-        writer: '往事如烟'
+        key: '2',
+        title: '我的点赞',
+        status: '启用',
+        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        AppLink: 'www.baidu.com',
+        H5Link: 'www.baidu.com',
+        PCLink: 'www.baidu.com'
     },
     {
-        key: '1',
-        title: '室内花卉种植3',
-        status: '待发布',
-        createTime: '2020/10/07 12:00:01',
-        checkTime: '2020/10/07 12:30:01',
-        checkStaff: '张三',
-        writer: '最美的不是下雨天'
+        key: '3',
+        title: '我的足迹',
+        status: '关闭',
+        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        AppLink: 'www.baidu.com',
+        H5Link: 'www.baidu.com',
+        PCLink: 'www.baidu.com'
     },
+    {
+        key: '4',
+        title: '我的关注',
+        status: '关闭',
+        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        AppLink: 'www.baidu.com',
+        H5Link: 'www.baidu.com',
+        PCLink: 'www.baidu.com'
+    },
+    {
+        key: '5',
+        title: '我的发表',
+        status: '关闭',
+        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        AppLink: 'www.baidu.com',
+        H5Link: 'www.baidu.com',
+        PCLink: 'www.baidu.com'
+    },
+    {
+        key: '6',
+        title: '粉丝列表',
+        status: '关闭',
+        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        AppLink: 'www.baidu.com',
+        H5Link: 'www.baidu.com',
+        PCLink: 'www.baidu.com'
+    },
+    {
+        key: '7',
+        title: '我的私信',
+        status: '关闭',
+        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        AppLink: 'www.baidu.com',
+        H5Link: 'www.baidu.com',
+        PCLink: 'www.baidu.com'
+    },
+    {
+        key: '8',
+        title: '我的收入',
+        status: '关闭',
+        IconUrl: 'https://img.yzcdn.cn/vant/leaf.jpg',
+        AppLink: 'www.baidu.com',
+        H5Link: 'www.baidu.com',
+        PCLink: 'www.baidu.com'
+    }
 ];
 
+const { Search } = Input;
+const { TabPane } = Tabs;
+const { TextArea } = Input;
 class SetMine extends Component {
-    state = {
-        loading: false,
-    }
+    state = { size: 'small', defaultRule: '一篇笔记+3，一篇散文+5，回答问题+1；', defaultRule1: '签到规则' };
 
+    onChange = e => {
+        this.setState({ size: e.target.value });
+    };
 
 
     render() {
+        const { size, defaultRule, defaultRule1 } = this.state;
         return (
             <div className="Index-wrapper">
                 <div className="chart2">
-                    <div className="title">我的待发布——笔记</div>
-                    <Table columns={columns} dataSource={data} className="team-table" />
+                    <div className="title">贡献值规则配置</div>
+                    <TextArea rows={4} value={defaultRule} className="my-textarea" /><Button type="primary">保存</Button>
                 </div>
                 <div className="chart2">
-                    <div className="title">我的待发布——散文</div>
-                    <Table columns={columns} dataSource={data} className="team-table" />
+                    <div className="title">签到规则配置</div>
+                    <TextArea rows={4} value={defaultRule1} className="my-textarea" /><Button type="primary">保存</Button>
                 </div>
                 <div className="chart2">
-                    <div className="title">我的待发布——问答</div>
-                    <Table columns={columns} dataSource={data} className="team-table" />
+                    <div className="title">个人中心导航配置</div>
+                    <Table columns={columns1} dataSource={data1} className="team-table" />
                 </div>
             </div>
         );
