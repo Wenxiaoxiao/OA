@@ -40,15 +40,9 @@ const columns = [
         key: 'action',
         render: (text, record) => (
             <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    启用
-        </Tag>
-                <Tag color={'geekblue'} key={'edit'}>
-                    关闭
-        </Tag>
-                <Tag color={'red'} key={'edit'}>
-                    编辑
-        </Tag>
+                <Tag color={'green'} key={'open'}>启用</Tag>
+                <Tag color={'geekblue'} key={'close'}>关闭</Tag>
+                <Tag color={'red'} key={'edit'}>编辑</Tag>
             </div>
         ),
     },
@@ -126,15 +120,9 @@ const columns1 = [
         key: 'action',
         render: (text, record) => (
             <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    启用
-        </Tag>
-                <Tag color={'geekblue'} key={'edit'}>
-                    关闭
-        </Tag>
-                <Tag color={'red'} key={'edit'}>
-                    编辑
-        </Tag>
+                <Tag color={'green'} key={'open'}>启用</Tag>
+                <Tag color={'geekblue'} key={'close'}>关闭</Tag>
+                <Tag color={'red'} key={'edit'}>编辑</Tag>
             </div>
         ),
     },
@@ -272,12 +260,8 @@ const columns2 = [
         key: 'action',
         render: (text, record) => (
             <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    查看
-        </Tag>
-                <Tag color={'volcano'} key={'delete'}>
-                    删除
-        </Tag>
+                <Tag color={'green'} key={'watch'}>查看</Tag>
+                <Tag color={'volcano'} key={'delete'}>删除</Tag>
             </div>
         ),
     },

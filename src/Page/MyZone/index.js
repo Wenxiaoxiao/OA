@@ -33,8 +33,8 @@ const columns = [
         render: (text, record) => (
             <div className="action">
                 <Tag color={'green'} key={'watch'}>查看</Tag>
-                <Tag color={'green'} key={'watch'}>指派</Tag>
-                <Tag color={'blue'} key={'check'}>编辑并审核</Tag>
+                <Tag color={'green'} key={'assign'}>指派</Tag>
+                <Tag color={'blue'} key={'editcheck'}>编辑并审核</Tag>
                 <Tag color={'volcano'} key={'delete'}>删除</Tag>
             </div>
         ),
@@ -50,14 +50,14 @@ const data = [
         createTime: '2020/10/07 12:00:01'
     },
     {
-        key: '1',
+        key: '2',
         title: '室内花卉种植',
         status: '待审核',
         writer: '往事如烟',
         createTime: '2020/10/07 12:00:01'
     },
     {
-        key: '1',
+        key: '3',
         title: '室内花卉种植',
         status: '待审核',
         writer: '最美的不是下雨天',

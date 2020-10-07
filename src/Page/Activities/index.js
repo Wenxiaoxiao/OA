@@ -64,7 +64,7 @@ const data2 = [
         PCLink: 'www.baidu.com'
     },
     {
-        key: '1',
+        key: '2',
         name: '双十一',
         status: '已上线',
         starttime: '2020/10/07 12:00:01',
@@ -75,7 +75,7 @@ const data2 = [
         PCLink: 'www.baidu.com'
     },
     {
-        key: '1',
+        key: '3',
         name: '双十一',
         status: '已上线',
         starttime: '2020/10/07 12:00:01',
@@ -113,15 +113,9 @@ const columns3 = [
         key: 'action',
         render: (text, record) => (
             <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    启用
-        </Tag>
-                <Tag color={'geekblue'} key={'edit'}>
-                    关闭
-        </Tag>
-                <Tag color={'red'} key={'edit'}>
-                    编辑
-        </Tag>
+                <Tag color={'green'} key={'open'}>启用</Tag>
+                <Tag color={'geekblue'} key={'close'}>关闭</Tag>
+                <Tag color={'red'} key={'edit'}>编辑</Tag>
             </div >
         ),
     },

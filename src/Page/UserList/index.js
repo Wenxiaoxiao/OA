@@ -102,15 +102,9 @@ const columns2 = [
         key: 'action',
         render: (text, record) => (
             <div className="action">
-                <Tag color={'green'} key={'watch'}>
-                    查看
-        </Tag>
-                <Tag color={'volcano'} key={'delete'}>
-                    删除
-        </Tag>
-                <Tag color={'blue'} key={'delete'}>
-                    重置密码
-        </Tag>
+                <Tag color={'green'} key={'watch'}>查看</Tag>
+                <Tag color={'volcano'} key={'delete'}>删除</Tag>
+                <Tag color={'blue'} key={'resetpassword'}>重置密码</Tag>
             </div >
         ),
     },

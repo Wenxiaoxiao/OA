@@ -79,7 +79,7 @@ const data = [
         publishTime: '2020/10/07 13:30:01'
     },
     {
-        key: '1',
+        key: '2',
         title: '室内花卉种植5',
         status: '已删除',
         reason: '内容已过时',
@@ -91,7 +91,7 @@ const data = [
         publishTime: null
     },
     {
-        key: '1',
+        key: '3',
         title: '室内花卉种植6',
         status: '已删除',
         reason: '内容不符合价值观',
