@@ -1,10 +1,83 @@
 import React, { Component } from 'react';
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row, Table, Tag } from 'antd';
 import './index.scss';
 import png1 from '../../images/1.png';
 import png2 from '../../images/2.png';
 import png3 from '../../images/3.png';
 import png4 from '../../images/4.png';
+const columns = [
+  {
+    title: '姓名',
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a>{text}</a>,
+  },
+  {
+    title: '权限',
+    dataIndex: 'auth',
+    key: 'auth',
+  },
+  {
+    title: '地址',
+    dataIndex: 'address',
+    key: 'address',
+  },
+  {
+    title: '标签',
+    key: 'tags',
+    dataIndex: 'tags',
+    render: tags => (
+      <div>
+        {tags.map(tag => {
+          let color = 'green';
+          return (
+            <Tag color={color} key={tag}>
+              {tag.toUpperCase()}
+            </Tag>
+          );
+        })}
+      </div>
+    ),
+  },
+  {
+    title: '操作',
+    key: 'action',
+    render: (text, record) => (
+      <div className="action">
+        <Tag color={'geekblue'} key={'edit'}>
+          编辑
+        </Tag>
+        <Tag color={'volcano'} key={'delete'}>
+          删除
+        </Tag>
+      </div>
+    ),
+  },
+];
+
+const data = [
+  {
+    key: '1',
+    name: '张三',
+    auth: 1,
+    address: '湖北省武汉市',
+    tags: ['细心', '文笔好'],
+  },
+  {
+    key: '2',
+    name: '李四',
+    auth: 0,
+    address: '湖南省长沙市',
+    tags: ['效率高', ' 积极主动'],
+  },
+  {
+    key: '3',
+    name: '王二麻',
+    auth: 0,
+    address: '北京市',
+    tags: ['态度好', '认真负责'],
+  },
+];
 class Index extends Component {
   state = {
     loading: false,
@@ -100,6 +173,10 @@ class Index extends Component {
         <div className="chart2">
           <div className="title">今日头条/微信等渠道费用和获取用户数——转化率</div>
           <img src={png4} />
+        </div>
+        <div className="chart2">
+          <div className="title">我的团队</div>
+          <Table columns={columns} dataSource={data} className="team-table" />
         </div>
       </div>
     );
