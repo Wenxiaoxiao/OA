@@ -9,6 +9,11 @@ const columns2 = [
         render: text => <a>{text}</a>,
     },
     {
+        title: '已购',
+        dataIndex: 'hasbuy',
+        key: 'hasbuy',
+    },
+    {
         title: '专栏',
         dataIndex: 'type',
         key: 'type',
@@ -105,6 +110,7 @@ const data2 = [
     {
         key: '1',
         title: '我的第一个十年',
+        hasbuy: '否',
         status: '已上线',
         createTime: '2020/10/07 12:00:01',
         checkTime: '2020/10/07 12:30:01',
@@ -122,6 +128,7 @@ const data2 = [
         key: '2',
         title: '室内花卉种植2',
         status: '已上线',
+        hasbuy: '是',
         createTime: '2020/10/07 12:00:01',
         checkTime: '2020/10/07 12:30:01',
         checkStaff: '李四',
@@ -138,6 +145,7 @@ const data2 = [
         key: '3',
         title: '如何快速升职加薪？',
         status: '已上线',
+        hasbuy: '是',
         createTime: '2020/10/07 12:00:01',
         checkTime: '2020/10/07 12:30:01',
         checkStaff: '张三',

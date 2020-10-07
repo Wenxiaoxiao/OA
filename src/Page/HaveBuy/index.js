@@ -13,6 +13,11 @@ const columns2 = [
         key: 'type',
     },
     {
+        title: '已购',
+        dataIndex: 'hasbuy',
+        key: 'hasbuy',
+    },
+    {
         title: '创建时间',
         dataIndex: 'createTime',
         key: 'createTime',
@@ -56,6 +61,12 @@ const columns2 = [
         title: '收藏量',
         dataIndex: 'collectSum',
         key: 'collectSum',
+    },
+    {
+        title: '二维码',
+        dataIndex: 'qrcode',
+        key: 'qrcode',
+        render: text => <img src={text} className="qrcode" />
     },
     {
         title: '标签',
@@ -114,8 +125,10 @@ const data2 = [
         watchSum: 1000,
         likeSum: 120,
         collectSum: 100,
+        qrcode: 'http://devoutact.top/OA/src/images/qrcode.jpg',
         tags: ['可爱', '励志'],
-        type: '散文'
+        type: '散文',
+        hasbuy: '是'
     },
     {
         key: '2',
@@ -130,8 +143,10 @@ const data2 = [
         watchSum: 1000,
         likeSum: 120,
         collectSum: 100,
+        qrcode: 'http://devoutact.top/OA/src/images/qrcode.jpg',
         tags: ['可爱', '励志'],
-        type: '笔记'
+        type: '笔记',
+        hasbuy: '是'
     },
     {
         key: '3',
@@ -146,8 +161,10 @@ const data2 = [
         watchSum: 1000,
         likeSum: 120,
         collectSum: 100,
+        qrcode: 'http://devoutact.top/OA/src/images/qrcode.jpg',
         tags: ['励志'],
-        type: '问答'
+        type: '问答',
+        hasbuy: '是'
     },
 ];
 const { Search } = Input;
