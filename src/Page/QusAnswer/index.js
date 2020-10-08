@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import { Table, Tag, Input, Tabs, Radio } from 'antd';
+
 const columns2 = [
     {
-        title: '标题',
+        title: '问题',
         dataIndex: 'title',
         key: 'title',
         render: text => <a>{text}</a>,
-    },
-    {
-        title: '类型',
-        dataIndex: 'type',
-        key: 'type',
     },
     {
         title: '已购',
@@ -18,9 +14,9 @@ const columns2 = [
         key: 'hasbuy',
     },
     {
-        title: '金额',
-        dataIndex: 'amount',
-        key: 'amount',
+        title: '专栏',
+        dataIndex: 'type',
+        key: 'type',
     },
     {
         title: '创建时间',
@@ -68,29 +64,6 @@ const columns2 = [
         key: 'collectSum',
     },
     {
-        title: '二维码',
-        dataIndex: 'qrcode',
-        key: 'qrcode',
-        render: text => <img src={text} className="qrcode" />
-    },
-    {
-        title: '标签',
-        dataIndex: 'tags',
-        key: 'tags',
-        render: tags => (
-            <div>
-                {tags.map(tag => {
-                    let color = 'green';
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </div>
-        ),
-    },
-    {
         title: '状态',
         key: 'status',
         dataIndex: 'status',
@@ -105,9 +78,12 @@ const columns2 = [
         key: 'action',
         render: (text, record) => (
             <div className="action">
-                <Tag color={'red'} key={'edit'}>编辑</Tag>
-                <Tag color={'green'} key={'watch'}>查看</Tag>
-                <Tag color={'volcano'} key={'delete'}>删除</Tag>
+                <Tag color={'green'} key={'watch'}>
+                    查看
+        </Tag>
+                <Tag color={'volcano'} key={'delete'}>
+                    删除
+        </Tag>
             </div>
         ),
     },
@@ -116,65 +92,56 @@ const columns2 = [
 const data2 = [
     {
         key: '1',
-        title: '我的...',
+        title: '一加一？',
+        hasbuy: '否',
         status: '已上线',
-        createTime: '2020/10/07 12:00:01',
+        createTime: '2020/10/07...',
         checkTime: '2020/10/07...',
         checkStaff: '张三',
-        writer: '一只',
+        writer: '一只风筝',
         publishStaff: '赵小小',
         publishTime: '2020/10/07...',
-        watchSum: 10,
-        likeSum: 12,
-        collectSum: 10,
-        qrcode: 'http://devoutact.top/OA/src/images/qrcode.jpg',
-        tags: ['可爱', '励志'],
-        type: '散文',
-        hasbuy: '是',
-        amount: 10
+        watchSum: 1000,
+        likeSum: 120,
+        collectSum: 100,
+        type: '语言'
     },
     {
         key: '2',
-        title: '室内花...',
+        title: '问题？',
         status: '已上线',
-        createTime: '2020/10/07 12:00:01',
+        hasbuy: '是',
+        createTime: '2020/10/07...',
         checkTime: '2020/10/07...',
         checkStaff: '李四',
-        writer: '往事',
+        writer: '往事如烟',
         publishStaff: '赵小小',
         publishTime: '2020/10/07...',
-        watchSum: 10,
-        likeSum: 12,
-        collectSum: 11,
-        qrcode: 'http://devoutact.top/OA/src/images/qrcode.jpg',
-        tags: ['可爱', '励志'],
-        type: '笔记',
-        hasbuy: '是',
-        amount: 1
+        watchSum: 1000,
+        likeSum: 120,
+        collectSum: 100,
+        type: '园艺'
     },
     {
         key: '3',
-        title: '升职加薪...',
+        title: '加薪？',
         status: '已上线',
-        createTime: '2020/10/07 12:00:01',
+        hasbuy: '是',
+        createTime: '2020/10/07...',
         checkTime: '2020/10/07...',
         checkStaff: '张三',
-        writer: '最美',
+        writer: '最美的...',
         publishStaff: '赵大大',
         publishTime: '2020/10/07...',
-        watchSum: 10,
-        likeSum: 12,
-        collectSum: 10,
-        qrcode: 'http://devoutact.top/OA/src/images/qrcode.jpg',
-        tags: ['励志'],
-        type: '问答',
-        hasbuy: '是',
-        amount: 10
+        watchSum: 1000,
+        likeSum: 120,
+        collectSum: 100,
+        type: '职场'
     },
 ];
 const { Search } = Input;
 const { TabPane } = Tabs;
-class HaveBuy extends Component {
+class QusAnswer extends Component {
     state = { size: 'small' };
 
     onChange = e => {
@@ -187,7 +154,7 @@ class HaveBuy extends Component {
         return (
             <div className="Index-wrapper">
                 <div className="chart2">
-                    <div className="title">已购列表</div>
+                    <div className="title">问答列表</div>
                     <Search placeholder="输入作品名或作者名" onSearch={value => console.log(value)} enterButton className="my-search" />
                     <span className="my-tabs-name">排序</span>
                     <Radio.Group value={size} onChange={this.onChange} style={{ marginBottom: 16 }}>
@@ -203,4 +170,4 @@ class HaveBuy extends Component {
     }
 }
 
-export default HaveBuy;
+export default QusAnswer;

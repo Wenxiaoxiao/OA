@@ -9,6 +9,11 @@ const columns2 = [
         render: text => <a>{text}</a>,
     },
     {
+        title: '注册渠道',
+        dataIndex: 'channel',
+        key: 'channel'
+    },
+    {
         title: '手机号',
         dataIndex: 'phone',
         key: 'phone'
@@ -117,9 +122,10 @@ const data2 = [
         attention: 120,
         fans: 1000,
         phone: 12345678901,
+        channel: '微信',
         password: '111111',
         status: '已上线',
-        createTime: '2020/10/07 12:00:01',
+        createTime: '2020/10/07...',
         watchSum: 1000,
         likeSum: 120,
         collectSum: 100,
@@ -129,17 +135,18 @@ const data2 = [
         tags: ['可爱', '励志'],
         income: 0,
         contribution: 10,
-        latestlogin: '2020/10/07 12:30:01'
+        latestlogin: '2020/10/07...'
     },
     {
         key: '2',
         name: 'ten年',
         attention: 0,
+        channel: '今日头条',
         fans: 0,
         phone: 12345678901,
         password: '111111',
         status: '已上线',
-        createTime: '2020/10/07 12:00:01',
+        createTime: '2020/10/07...',
         watchSum: 1000,
         likeSum: 120,
         collectSum: 100,
@@ -149,7 +156,7 @@ const data2 = [
         tags: ['可爱', '励志'],
         income: 10000,
         contribution: 1000,
-        latestlogin: '2020/10/07 12:30:01'
+        latestlogin: '2020/10/07...'
     },
     {
         key: '3',
@@ -157,7 +164,7 @@ const data2 = [
         phone: 12345678901,
         password: '111111',
         status: '已上线',
-        createTime: '2020/10/07 12:00:01',
+        createTime: '2020/10/07...',
         watchSum: 1000,
         likeSum: 120,
         collectSum: 100,
@@ -167,7 +174,7 @@ const data2 = [
         tags: ['可爱', '励志'],
         income: 100,
         contribution: 50,
-        latestlogin: '2020/10/07 12:30:01'
+        latestlogin: '2020/10/07...'
     },
 ];
 const { Search } = Input;
@@ -186,7 +193,15 @@ class UserList extends Component {
             <div className="Index-wrapper">
                 <div className="chart2">
                     <div className="title">用户列表(点击用户名，进入用户详情,关注弹出关注列表，粉丝弹出粉丝列表)</div>
-                    <Search placeholder="输入作者名" onSearch={value => console.log(value)} enterButton className="my-search" />
+                    <Search placeholder="输入作者名或手机号" onSearch={value => console.log(value)} enterButton className="my-search" />
+                    <span className="my-tabs-name">排序</span>
+                    <Radio.Group value={size} onChange={this.onChange} style={{ marginBottom: 16 }}>
+                        <Radio.Button value="small">粉丝数</Radio.Button>
+                        <Radio.Button value="small1">贡献值</Radio.Button>
+                        <Radio.Button value="default">点赞量</Radio.Button>
+                        <Radio.Button value="large">收藏量</Radio.Button>
+                        <Radio.Button value="large1">最近一次登录</Radio.Button>
+                    </Radio.Group>
                     <Table columns={columns2} dataSource={data2} className="team-table" />
                 </div>
             </div>

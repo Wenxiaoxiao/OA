@@ -1,6 +1,102 @@
 import React, { Component } from 'react';
 import { Table, Tag, Input, Tabs, Radio, Button } from 'antd';
 
+const columns = [
+    {
+        title: '问卷名称',
+        dataIndex: 'name',
+        key: 'name',
+    },
+    {
+        title: '创建时间',
+        dataIndex: 'createTime',
+        key: 'createTime'
+    },
+    {
+        title: '问卷内容',
+        dataIndex: 'content',
+        key: 'content'
+    },
+    {
+        title: '问卷反馈数',
+        dataIndex: 'feedbackNum',
+        key: 'feedbackNum',
+        render: text => <a>{text}</a>,
+    }
+];
+const data = [
+    {
+        key: '1',
+        name: '用户体验调查',
+        createTime: '2020/10/08 12:00:00',
+        content: '操作改进的地方？',
+        feedbackNum: 100
+    }
+];
+
+const columns1 = [
+    {
+        title: '渠道',
+        dataIndex: 'channel',
+        key: 'channel',
+        render: text => <a>{text}</a>,
+    },
+    {
+        title: '投入',
+        dataIndex: 'input',
+        key: 'input'
+    },
+    {
+        title: '投入时间',
+        dataIndex: 'inputTime',
+        key: 'inputTime'
+    },
+    {
+        title: 'H5链接',
+        dataIndex: 'H5Link',
+        key: 'H5Link',
+    },
+    {
+        title: '状态',
+        key: 'status',
+        dataIndex: 'status',
+        render: tags => (
+            <Tag color={'volcano'} key={'status'}>
+                {tags}
+            </Tag>
+        ),
+    },
+    {
+        title: '操作',
+        key: 'action',
+        render: (text, record) => (
+            <div className="action">
+                <Tag color={'green'} key={'open'}>启用</Tag>
+                <Tag color={'geekblue'} key={'close'}>关闭</Tag>
+                <Tag color={'red'} key={'edit'}>编辑</Tag>
+            </div>
+        ),
+    },
+];
+
+const data1 = [
+    {
+        key: '1',
+        channel: '今日头条',
+        status: '启用',
+        input: 10000,
+        H5Link: 'www.baidu.com',
+        inputTime: '2020/10/07 12:00:01'
+    },
+    {
+        key: '2',
+        channel: '微信',
+        status: '启用',
+        input: 20000,
+        H5Link: 'www.baidu.com',
+        inputTime: '2020/10/07 12:00:01'
+    }
+];
 const columns2 = [
     {
         title: '活动名称',
@@ -158,6 +254,16 @@ class Activities extends Component {
         const { size } = this.state;
         return (
             <div className="Index-wrapper">
+                <div className="chart2">
+                    <div className="title">问卷调查设置(点击问卷反馈数，弹出问卷反馈列表)</div>
+                    <Button type="primary" className="my-btn">新增</Button>
+                    <Table columns={columns} dataSource={data} className="team-table" />
+                </div>
+                <div className="chart2">
+                    <div className="title">推广渠道列表</div>
+                    <Button type="primary" className="my-btn">新增</Button>
+                    <Table columns={columns1} dataSource={data1} className="team-table" />
+                </div>
                 <div className="chart2">
                     <div className="title">活动列表</div>
                     <Button type="primary" className="my-btn">新增</Button>

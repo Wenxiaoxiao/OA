@@ -15,6 +15,7 @@ import TrashCan from '../TrashCan';//已删除的
 import SetIndex from '../SetIndex';//首页页面配置
 import SetNote from '../SetNote';//笔记页面配置
 import SetArticle from '../SetArticle';//散文页面配置
+import QusAnswer from '../QusAnswer';//问答页面配置
 import SetMine from '../SetMine';//我的页面配置
 import UserList from '../UserList';//用户列表
 import Activities from '../Activities';//活动配置
@@ -73,6 +74,7 @@ class Main extends Component {
     'Main/SetIndex': ['/Main/SetIndex'],
     'Main/SetNote': ['/Main/SetNote'],
     'Main/SetArticle': ['/Main/SetArticle'],
+    'Main/QusAnswer': ['/Main/QusAnswer'],
     'Main/SetMine': ['/Main/SetMine'],
     'Main/UserList': ['/Main/UserList'],
     'Main/Activities': ['/Main/Activities'],
@@ -124,6 +126,11 @@ class Main extends Component {
       {
         "FunctionName": "散文",
         "Url": "Main/SetArticle",
+        "Authority": 1,
+      },
+      {
+        "FunctionName": "问答",
+        "Url": "Main/QusAnswer",
         "Authority": 1,
       },
       {
@@ -197,6 +204,7 @@ class Main extends Component {
             <Route exact path="/Main/Online" component={Online} />
             <Route exact path="/Main/TrashCan" component={TrashCan} />
             <Route exact path="/Main/SetArticle" component={SetArticle} />
+            <Route exact path="/Main/QusAnswer" component={QusAnswer} />
             <Route exact path="/Main/SetIndex" component={SetIndex} />
             <Route exact path="/Main/SetMine" component={SetMine} />
             <Route exact path="/Main/SetNote" component={SetNote} />

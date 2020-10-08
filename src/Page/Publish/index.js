@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Tag } from 'antd';
+import Editor from '../../components/Editor';
 const columns = [
     {
         title: '标题',
@@ -83,14 +84,19 @@ const data = [
 
 class Publish extends Component {
     state = {
-        loading: false,
+        loading: false
     }
 
 
 
     render() {
+        //https://braft.margox.cn/demos/antd-form 富文本编辑器
+        const controls = ['bold', 'italic', 'underline', 'text-color', 'separator', 'link', 'separator', 'media'];
         return (
             <div className="Index-wrapper">
+                {/* <Editor className="my-editor"
+                    controls={controls}
+                    placeholder="请输入正文内容" /> */}
                 <div className="chart2">
                     <div className="title">我的待发布——笔记</div>
                     <Table columns={columns} dataSource={data} className="team-table" />
